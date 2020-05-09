@@ -27,18 +27,18 @@ class Solution(object):
         elif key < root.val:
             root.left = self.deleteNode(root.left,key)
         else:
-            if root.left != None and root.right != None:
+            if root.left != None and root.right != None: # both left and right subtrees
                 sucessor = root.right
                 while sucessor.left:
                     sucessor = sucessor.left
-                root.val = sucessor.val
-                root.right = self.deleteNode(root.right,sucessor.val)
+                root.val = sucessor.val  # set val to sucessor.val
+                root.right = self.deleteNode(root.right,sucessor.val) # delete sucessor
             else:
-                if root.left == None and root.right == None:
+                if root.left == None and root.right == None:   # leaf node
                     root = None
-                elif root.left == None:
+                elif root.left == None:   # only right subtree
                     root = root.right
-                elif root.right == None:
+                elif root.right == None: # only left subtree
                     root = root.left
         return root
             

@@ -15,8 +15,8 @@ class ListNode(object):
         self.val = x
         self.next = None
 
-
 class Solution(object):
+    # brute force
     def mergeKLists(self, lists):
         """
         :type lists: List[ListNode]
@@ -49,3 +49,11 @@ class Solution(object):
         return result.next
 
 
+a = ListNode(1)
+a.next = ListNode(5)
+
+q = PriorityQueue()
+q.put((a.val,a))
+q.put((a.next.val,a.next))
+val, node = q.get()
+print(val)
