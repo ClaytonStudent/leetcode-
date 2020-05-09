@@ -34,3 +34,26 @@ freq = [3,2,-1,6,5,4,-3,3,7,2,3]
 BITTree = construct(freq, len(freq))
 print(BITTree)
 print("Sum of elements in arr[0..5] is " + str(getsum(BITTree, 5)))
+
+
+
+
+# fibonacci
+def fibonacci_recu(num):
+    if num == 0:
+        return 0
+    elif num == 1:
+        return 1
+    return fibonacci_recu(num-1) + fibonacci_recu(num-2)
+
+def fibonacci_iter(num):
+    a,b = 0,1
+    for _ in range(num):
+        a,b = b, a+b
+    return a 
+
+# Most Frequent
+from collections import Counter 
+def most_frequent(List): 
+    occurence_count = Counter(List) 
+    return list(occurence_count.most_common(1)[0])

@@ -158,12 +158,7 @@ def quickSort(nums):  # 这种写法的平均空间复杂度为 O(nlogn)
     left = [nums[i] for i in range(1, len(nums)) if nums[i] < pivot]
     right = [nums[i] for i in range(1, len(nums)) if nums[i] >= pivot]
     return quickSort(left) + [pivot] + quickSort(right)
-
-'''
-@param nums: 待排序数组
-@param left: 数组上界
-@param right: 数组下界
-'''
+    
 def quickSort2(nums, left, right):  # 这种写法的平均空间复杂度为 O(logn)
     # 分区操作
     def partition(nums, left, right):
@@ -214,9 +209,6 @@ def counting_sort(A, digit, radix):
 
     return B
 
-alist = [9,3,1,4,5,7,7,2,2]
-print(counting_sort(alist,0,10))
-
 def radix_sort(A, radix):
     #radix is the base of the number system
     #k is the largest number in the list
@@ -230,6 +222,3 @@ def radix_sort(A, radix):
         output = counting_sort(output,i,radix)
         print(output)
     return output
-nums = [4,1,3,2]
-nums = bubble(nums)
-print(nums)
