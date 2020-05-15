@@ -26,6 +26,14 @@ def fun_two():
 def fun_three():
     sleep(3)
 
-fun_one()
-fun_two()
-fun_three()
+#fun_one()
+#fun_two()
+#fun_three()
+
+
+a = [7]
+index = 0
+left = a[1:1]
+right = a[-0:]
+#left = a[1+len()]
+print(left,right)
