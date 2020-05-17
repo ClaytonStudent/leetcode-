@@ -42,3 +42,4 @@ root = my(preorder,inorder)
 print(root.val)
 print(root.left.val)
 print(root.left.left.val)
+

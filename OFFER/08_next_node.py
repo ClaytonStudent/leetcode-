@@ -29,4 +29,17 @@ class Solution:
 
 
 
+def GetNext(node):
+    if not node:
+        return None
+    if node.right:
+        p = node.right
+        while p.left:
+            p = p.left
+        return p
+    while node.next:
+        p = node.next
+        if p.left == node:
+            return p
+        node = p
    

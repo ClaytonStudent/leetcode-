@@ -31,3 +31,8 @@ def print_list(head):
         head = head.next
     while stack:
         print(stack.pop())
+
+def print_list_(head):
+    if head:
+        print_list_(head.next)
+        print(head.val)

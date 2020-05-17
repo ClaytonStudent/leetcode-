@@ -12,8 +12,9 @@ def cut(n):
             temp = l[j] * l[i-j]
             max_num = max(max_num,temp)
         l.append(max_num)
-    return l[n] 
+    return l[-1] 
 
+# greedy algorithm
 def cut_greedy(n):
     if n < 2:
         return 0

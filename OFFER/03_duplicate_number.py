@@ -1,4 +1,4 @@
-# 03_duplicate_number
+# 题目：找出数组中的重复数字
 # 时间复杂度 O(nlogn)
 def duplicate_number(nums):
     if len(nums) <= 1:
