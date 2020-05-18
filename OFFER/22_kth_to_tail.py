@@ -4,17 +4,16 @@ class ListNode(object):
          self.next = None
 
 def last_kth(link, k):
-    if not link or k <= 0:
+    if not link or k <= 0:  # 空指针和k为0的特殊情况
         return None
     move = link
     while move and k-1 >= 0: # 第一个指针移动k-n步
         move = move.next
         k -= 1
-    print(k)
     while move:
         move = move.next # 第二个指针同第一个一起移动知道第一个到底
         link = link.next
-    if k == 0:   #重要！这个是用来判断链表是不是比k长
+    if k == 0:   # 重要！这个是用来判断链表是不是比k长
         return link.val
     return None
 

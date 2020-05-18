@@ -14,5 +14,5 @@ def bit_(n):
         count += 1
         n = (n-1) & n
     return count
-print(bit_calculate(-8))
-print(bit_(-8))
+print(bit_calculate(3))
+print(bit_(1))

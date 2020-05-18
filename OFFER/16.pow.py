@@ -30,9 +30,8 @@ def pow_(base,exponent):
         return 1
     if exponent == 1:
         return base
-    result = pow_(base,exponent >> 1) # 用用以替代除以2
+    result = pow_(base,exponent >> 1) # 用右移替代除以2
     result *= result
-    print(result)
     if exponent & 0x1 == 1:  # 用位与替代除余
         result *= base
     return result

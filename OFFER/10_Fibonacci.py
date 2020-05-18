@@ -6,7 +6,7 @@ def fibonacci_recurssive(n):
     elif n > 1:
         return fibonacci_recurssive(n-1) + fibonacci_recurssive(n-2)
     else:
-        return -1
+        return -1  # 其他情况
 
 
 def fibonacci_iterative_with_memo(n):
@@ -32,7 +32,6 @@ def fibonacci_iterative_with_memo_2(n):
     elif n > 1:
         if memory[n] < 0:
             memory[n] = fibonacci_iterative_with_memo_2(n-1) + fibonacci_iterative_with_memo_2(n-2)
-        print(memory)
         return memory[n]
     else:
         return -1

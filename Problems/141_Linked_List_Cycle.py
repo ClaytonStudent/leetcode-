@@ -53,3 +53,16 @@ class Solution_2(object):
                 nodesSeen.add(head)
             head = head.next # move on to next node
         return False
+
+
+class Solution_3(object):
+    def hasCycle(self, head):
+        try:
+            slow = head.next
+            fast = head.next.next
+            while slow != fast:
+                slow = slow.next
+                fast = fast.next.next
+            return True
+        except:
+            return False

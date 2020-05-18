@@ -20,5 +20,5 @@ nums = [[1,2,8,9],
     [6,8,11,15]]
 
 
-ans = find_integer(nums,100)
+ans = find_integer(nums,8)
 print(ans)
