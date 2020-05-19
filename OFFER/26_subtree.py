@@ -1,3 +1,4 @@
+# 题目：输入两个二叉树，判断B是不是A的子结构
 class Solution:
     def isSubtree(self, s, t):
         if not s: 

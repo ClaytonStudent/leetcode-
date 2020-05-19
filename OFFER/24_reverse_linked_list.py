@@ -1,3 +1,4 @@
+# 题目：反转一个链表并输出它的头节点
 class ListNode(object):
     def __init__(self, x):
          self.val = x

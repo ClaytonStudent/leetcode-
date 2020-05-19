@@ -1,3 +1,4 @@
+# 题目：输入数组调整顺序使得奇数在偶数前面
 def reorder(nums, func):
     left, right = 0, len(nums) - 1
     while left < right:

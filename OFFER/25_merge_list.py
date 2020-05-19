@@ -1,3 +1,4 @@
+# 题目：输入两个递增的链表，合并他们且仍然是递增排序
 class ListNode(object):
     def __init__(self, x):
          self.val = x

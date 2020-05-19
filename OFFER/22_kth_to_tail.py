@@ -1,3 +1,4 @@
+# 题目：链表种倒数第k个节点
 class ListNode(object):
     def __init__(self, x):
          self.val = x
