@@ -1,3 +1,4 @@
+# 题目：二进制中1的个数
 # 原来Python2的int类型有32位和64位一说，但到了Python3，当长度超过32位或64位之后，Python3会自动将其转为长整型，长整型理论上没有长度限制。
 def bit_calculate(n):
     count = 0

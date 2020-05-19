@@ -1,3 +1,4 @@
+# 题目：实现数值的整次方
 def pow(base,exponent):
     if exponent == 0:
         return 1

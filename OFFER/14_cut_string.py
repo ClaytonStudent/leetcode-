@@ -1,3 +1,4 @@
+# 题目：一段长为n的绳子，剪成m段，最大的乘积是多少
 # Dynamic Programming
 def cut(n):
     if n < 2 :

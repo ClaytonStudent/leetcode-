@@ -1,3 +1,4 @@
+# m行n列的方格，机器人移动坐标数位之和不能大于k，最多能到达多少个格子？
 # -*- coding:utf-8 -*-
 class Solution_:
     def __init__(self):

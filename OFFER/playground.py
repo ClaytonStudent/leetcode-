@@ -1,14 +1,13 @@
-def reorder(nums, func):
-    left, right = 0 , len(nums) -1
-    while left < right:
-        while not isEven(left):
-            left += 1
-        while isEven(right):
-            right -= 1
-        if nums[left] < nums[right]:
-            nums[left], nums[right] = nums[right], nums[left]
-    return nums
-
-
-def isEven(n):
-    return n & 1 == 0
+def delete_node(head,node):
+    if head == node:
+        del node
+    if node.next is None:
+        while head:
+            if head.next == node:
+                head.next = None
+            head = head.next
+    else:
+        n_node = node.next
+        node.val = n_node.val
+        node.next = n_node.next
+        del n_node

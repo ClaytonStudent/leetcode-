@@ -1,10 +1,11 @@
+# 题目：在O1时间内删除链表的节点
 class ListNode(object):
     def __init__(self, x):
          self.val = x
          self.next = None
 
 def delete_node(link, node):
-    if node == link:  # 只有一个结点，头节点
+    if node == link:  # 只有一个结点，node是头节点
         del node
     if node.next is None:  # node是尾结点
         while link:
@@ -12,7 +13,7 @@ def delete_node(link, node):
                 link.next = None
             link = link.next
     else:
-        node.val = node.next.val # 中间节点
+        node.val = node.next.val # node是中间节点
         n_node = node.next
         node.next = n_node.next
         del n_node

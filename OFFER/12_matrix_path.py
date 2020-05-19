@@ -1,4 +1,4 @@
-
+# 矩阵中的路径
 # -*- coding:utf-8 -*-
 class Solution:
     def hasPath(self, matrix, rows, cols, path):
