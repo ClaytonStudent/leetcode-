@@ -5,12 +5,7 @@ class ListNode(object):
          self.left = None
          self.right = None
          self.next = None
-# class TreeLinkNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-#         self.next = None
+
 class Solution:
     def GetNext(self, pNode):
         if not pNode:
@@ -25,21 +20,4 @@ class Solution:
             if pp.left == pNode:
                 return pp
             pNode = pp
-
-
-
-
-def GetNext(node):
-    if not node:
-        return None
-    if node.right:
-        p = node.right
-        while p.left:
-            p = p.left
-        return p
-    while node.next:
-        p = node.next
-        if p.left == node:
-            return p
-        node = p
    

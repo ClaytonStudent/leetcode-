@@ -29,5 +29,5 @@ def cut_greedy(n):
         times_of_3 -= 1
     times_of_2 = (n-times_of_3*3) //2
     return pow(3,times_of_3)*pow(2,times_of_2)
-print(cut(8))
-print(cut_greedy(8))
+print(cut(10))
+print(cut_greedy(5))

@@ -38,4 +38,4 @@ def pow_(base,exponent):
     return result
 
 #print(pow(2,2))
-print(power(2,7))
+print(pow(0.00001,2147483647))

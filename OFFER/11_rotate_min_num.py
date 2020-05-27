@@ -1,36 +1,25 @@
 # 题目：旋转数组中的最小数字
-def rotate(nums):
-    if len(nums) == 0:
-        return False
-    elif len(nums) == 1:
-        return nums[0]
-    left, right = 0, len(nums)-1
-    mid = 0
-    while nums[left] >= nums[right]:
-        if right - left == 1:
-            return nums[right]
-        mid = (left+right)//2
-        if nums[mid] >= nums[left]:
-            left = mid
-        elif nums[mid] <= nums[right]:
-            right = mid
-    return nums[mid]
+class Solution(object):
+    def minArray(self, numbers):
+        """
+        :type numbers: List[int]
+        :rtype: int
+        """
+        if not numbers:
+            return None
+        left, right = 0, len(numbers)-1
+        while left < right:
+            mid = (left+right)//2
+            if numbers[mid] < numbers[right]:
+                right = mid
+            elif numbers[mid] > numbers[right]:
+                left = mid + 1
+            else:
+                right -= 1 # 无法判断在哪里， 执行j=j−1 缩小判断范围
+        return numbers[left]
 
 
-def findMin(nums):
-    if len(nums) == 0:
-        return False
-    elif len(nums) == 1:
-        return nums[0]
-    left,right = 0, len(nums)-1
-    while left < right:
-        mid = (left+right) // 2
-        if nums[mid] > nums[right]:
-            left = mid +1
-        else:
-            right = mid
-    return nums[left]
 
-nums = [3,4,5,1,2]
-print(rotate(nums))
-print(findMin(nums))
+nums = [3,3,1,3]
+S = Solution()
+print(S.minArray(nums))
