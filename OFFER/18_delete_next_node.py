@@ -1,39 +1,25 @@
-# 题目：在O1时间内删除链表的节点
+# 题目：在O(1)时间内删除链表的节点
 class ListNode(object):
     def __init__(self, x):
          self.val = x
          self.next = None
 
-def delete_node(link, node):
-    if node == link:  # 只有一个结点，node是头节点
-        del node
-    if node.next is None:  # node是尾结点
-        while link:
-            if link.next == node:
-                link.next = None
-            link = link.next
-    else:
-        node.val = node.next.val # node是中间节点
-        n_node = node.next
-        node.next = n_node.next
-        del n_node
-
-def delete_node_(head,node):
-    if head == node:
-        del head  # 在原始的链表中删除一个节点
-    if node.next is None:
-        while head:
-            if head.next == node:
-                head.next = None
-            head = head.next
-    else:
-        node.val = node.next.val
-        temp = node.next
-        node.next = temp.next
-        del temp
+class Soluton(object):
+    def deleteNode(self,head,val):
+        if head.val == val:
+            return head.next
+        pre,cur = head, head.next
+        while cur and cur.val != val:
+            pre,cur = cur,cur.next
+        if cur:
+            pre.next = cur.next
+        return head
 
 A = ListNode(1)
 A.next = ListNode(2)
 A.next.next = ListNode(3)
-
-delete_node_(A,A.next)
+S= Soluton()
+head = S.deleteNode(A,1)
+print(head.val)
+print(head.next.val)
+print(head.next.next)

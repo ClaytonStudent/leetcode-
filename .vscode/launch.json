@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - HelloWorld",
+            "request": "launch",
+            "mainClass": "JAVA.HelloWorld",
+            "projectName": "leetcode-_7469e0"
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Gulp task",

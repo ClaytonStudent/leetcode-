@@ -1,18 +1,26 @@
 # 题目：输入数组调整顺序使得奇数在偶数前面
-def reorder(nums, func):
-    left, right = 0, len(nums) - 1
-    while left < right:
-        while not func(nums[left]):
-            left += 1
-        while func(nums[right]):
-            right -= 1
-        if left < right:
+class Solution(object):
+    def exchange(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        left, right = 0, len(nums)-1
+        while left < right:
+            if nums[left] & 1 == 1:
+                left += 1
+                continue
+            if nums[right] & 1 == 0:
+                right -= 1
+                continue
             nums[left], nums[right] = nums[right], nums[left]
-    return nums
+        return nums
 
-def is_even(num):
-    return (num & 1) == 0 # 不用除以取余数，而是和1并运算，如果为0则是偶数，为1则是奇数
+    def exchange(self, nums):
+        i, j = 0, len(nums) - 1
+        while i < j:
+            while i < j and nums[i] & 1 == 1: i += 1
+            while i < j and nums[j] & 1 == 0: j -= 1
+            nums[i], nums[j] = nums[j], nums[i]
+        return nums
 
-nums = [1,2,3,4,5]
-nums = reorder(nums,is_even)
-print(nums)
