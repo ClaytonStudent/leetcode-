@@ -6,22 +6,22 @@ class ListNode(object):
          self.left = None
          self.right = None
 
-def swap(root):
-    if not root:
-        return None
-    if not root.left and not root.right:
-        return None
-    root.left, root.right = root.right, root.left # 交换非叶节点
-    if root.left:
-        swap(root.left)
-    if root.right:
-        swap(root.right)
+class Solution(object):
+    def mirrorTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        if root:
+            root.left, root.right = root.right, root.left
+            self.mirrorTree(root.left)
+            self.mirrorTree(root.right)
+        return root
 
 # preorder traversal and append values to the new list ret
 # 按照中后前序遍历
 def mirror_pre(root):
     ret = []
-
     def traversal(root):
         if root:
             ret.append(root.val)
@@ -30,32 +30,3 @@ def mirror_pre(root):
     traversal(root)
     return ret
 
-
-def preorder(root):
-    ret = []
-
-    def traversal(root):
-        if root:
-            ret.append(root.val)
-            traversal(root.left)
-            traversal(root.right)
-    traversal(root)
-    return ret
-
-a = ListNode(8)
-b = ListNode(6)
-c = ListNode(10)
-d = ListNode(5)
-e = ListNode(7)
-f = ListNode(9)
-g = ListNode(11)
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.left = f
-c.right = g
-
-
-ret = preorder(a)
-print(ret)

@@ -1,33 +1,20 @@
 # 题目：定义栈的数据结构，实现找到栈的最小元素的min函数
-
-class Stacks():
+# source:https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/solution/mian-shi-ti-30-bao-han-minhan-shu-de-zhan-fu-zhu-z/
+class MinStack:
     def __init__(self):
-        self.stack = []
-        self.assist = []
-    
-    def push(self,val):
-        self.stack.append(val)
-        if self.assist and self.assist[-1] < val:
-            self.assist.append(self.assist[-1])
-        else:
-            self.assist.append(val)
-    
-    def pop(self):
-        if self.stack:
-            self.assist.pop()
-            return self.stack.pop()
-        return None
-    
-    def min_(self):
-        return self.assist[-1] if self.assist else None
+        self.A, self.B = [], []
 
-a = Stacks()
-a.push(3)
-a.push(4)
-a.push(2)
-a.push(1)
-a.pop()
-a.pop()
-print(a.min_())
-a.push(0)
-print(a.min_())
+    def push(self, x: int):
+        self.A.append(x)
+        if not self.B or self.B[-1] >= x:
+            self.B.append(x)
+
+    def pop(self):
+        if self.A.pop() == self.B[-1]:
+            self.B.pop()
+
+    def top(self):
+        return self.A[-1]
+
+    def min(self):
+        return self.B[-1]
